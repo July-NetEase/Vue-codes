@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>v-text实例</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+        <h3>Vue text & Vue html</h3>
+        <hr>
+        <div id="app">
+           <span v-text="message"></span>
+           <hr>
+           <span v-html="message_html"></span>
+        </div>
+    
+        <script type="text/javascript">
+            var app=new Vue({
+                el:'#app',
+                data:{
+                    message:'Vue text!',
+                    message_html:'<h4>Vue html!</h4>'
+                }
+            })
+        </script>
+</body>
+</html>
