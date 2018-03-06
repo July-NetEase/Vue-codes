@@ -14,13 +14,17 @@
            <hr>
            <button @click="jiafen">加1</button>
            <button @click="jianfen">减1</button>
+           <hr>
+           <input type="text" placeholder="手机号码" v-model="info" />
+           <button @click="sayWords">Submit</button>
         </div>
     
         <script type="text/javascript">
             var app=new Vue({
                 el:'#app',
                 data:{
-                    count:1
+                    count:1,
+                    msg:null
                 },
                 methods:{
                     jiafen:function() {
@@ -28,6 +32,10 @@
                     },
                     jianfen:function(){
                         this.count -= 1
+                    },
+                    sayWords:function(){
+                        this.msg = "您输入的手机号为： " + this.info;
+                        alert(this.msg)
                     }
                 }
             })
