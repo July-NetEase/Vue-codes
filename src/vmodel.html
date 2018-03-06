@@ -40,7 +40,16 @@
         <label for="one">男</label>
         <input type="radio" id="two" value="女" v-model="sex">
         <label for="one">女</label>
-        <p>{{sex}}</p>                       
+        <p>{{sex}}</p>
+        <hr>
+        <h3>选择框</h3>
+        <select v-model="selected">
+            <option value="" disabled selected>请选择</option> 
+            <option>A</option>             
+            <option>B</option>             
+            <option>C</option>
+        </select>
+        <p>Selected: {{selected}}</p>             
     </div>
     
     <script type="text/javascript">
@@ -50,7 +59,8 @@
                 message:'Hello Vue!',
                 isTrue:true,
                 web_Names:[],
-                sex:null
+                sex:null,
+                selected:null
             }
         })
     </script>
