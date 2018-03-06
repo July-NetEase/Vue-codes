@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Vue bind</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h3>Vue bind</h3>
+    <hr>
+    <div id="app">
+       <image v-bind:src="imgSrc" width="1000px">
+       <hr>
+       <div :class="isOK?classA:classB">绑定class中的三元表达式判断</div>
+       <div>          
+            <input type="checkbox" id="one" v-model="isOK">
+            <label for="one">isOK={{isOK}}</label>
+       </div>
+    </div>
+    <style>
+        .classA{
+            color:red;
+        }
+        .classB{
+            color:darkcyan;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var app=new Vue({
+            el:'#app',
+            data:{
+                imgSrc:'https://diycode.b0.upaiyun.com/photo/2018/a82eb86b06b5950aed79e4325891155d.png',
+                isOK:false,
+                classA:'classA',
+                classB:'classB',
+            }
+        })
+    </script>
+</body>
+</html>
