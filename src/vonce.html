@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Vue pre &Vue once & Vue cloak</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h3>Vue pre & Vue once & Vue cloak</h3>
+    <hr>
+    <div id="app">
+        <div v-pre>{{message}}</div>
+        <hr>
+        <div v-cloak>渲染完成后才显示</div>
+        <hr>
+        <!-- 上边的message不跟着下边变化（虽然实现了双向数据绑定）-->
+        <div v-once>{{message}}</div>
+        <div><input type="text" v-model="message"></div>
+        <!-- 下边这个实现了正常的双向数据绑定-->
+        <div >{{message}}</div>
+    </div>
+
+    <script type="text/javascript">
+        var app=new Vue({
+            el:'#app',
+            data:{
+                message:'Hello Vue!'
+            }
+        })
+    </script>
+</body>
+</html>
