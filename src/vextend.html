@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Vue extend</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h3>Vue extend</h3>
+    <hr>
+    <!--两种标签写法-->
+    <author></author>
+    <!--基于ID的写法-->
+    <div id="author"></div>
+    
+    <script type="text/javascript">
+       var authorExtend = Vue.extend({
+           template:"<p><a v-bind:href='authorUrl'>{{authorName}}</a></p>",
+           data:function(){
+               return{
+                    authorName:'YanXuan',
+                    authorUrl:'http://you.163.com'
+               }
+           }
+       });
+       new authorExtend().$mount('author');
+       new authorExtend().$mount('#author');
+    </script>
+</body>
+</html>
