@@ -13,8 +13,8 @@
        <ul>
            <li v-for="item in arr">{{item}}</li>
        </ul>
+        <button @click="changeData()">外部修改</button>
     </div>
-    <button onclick="changeData()">外部修改</button>
 
     <script type="text/javascript">
         function changeData(){
