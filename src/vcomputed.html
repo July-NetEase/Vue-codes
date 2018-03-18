@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Vue 选项</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h3>Vue computed</h3>
+    <hr>
+    <div id="app">
+        <p>{{newPrice}}</p>
+        <ul>
+            <li v-for="item in reverseNews">{{item.title}}-{{item.date}}</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var newList=[
+            {title:'香港起诉涉事运输公司',date:'2017/3/10'},
+            {title:'日本第二大准航母服役',date:'2017/3/12'},
+            {title:'中国北方将有明显雨雪降温天气',date:'2017/3/13'},
+            {title:'习近平全票当选中国国家主席',date:'2018/3/17'},
+        ];
+        var app=new Vue({
+            el:'#app',
+            data:{
+                price:'100',
+                newsList:newList
+            },
+            computed:{
+                newPrice:function(){
+                    return this.price= '¥: '+this.price +'元';
+                },
+                reverseNews:function(){
+                    return this.newsList.reverse();
+                }           
+            }
+
+        })
+    </script>
+</body>
+</html>
