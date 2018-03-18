@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Vue 选项之methods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h3>Vue选项之methods</h3>
+    <hr>
+    <div id="app">
+       {{num}}
+       <p><button @click="add(2)">add</button></p>
+    </div>
+
+    <script type="text/javascript">
+        var app=new Vue({
+            el:'#app',
+            data:{
+                num: 1
+            },
+            methods:{
+                add:function(n){
+                    if (n!=''){
+                        this.num +=n;
+                    }
+                    else{
+                       this.num++; 
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
